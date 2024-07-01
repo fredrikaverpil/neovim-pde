@@ -89,7 +89,7 @@ return {
               map("n", "<leader>lc", "<cmd>GoCoverage<Cr>", "Go Test Coverage")
               map("n", "<leader>lt", "<cmd>GoTest<Cr>", "Go Test")
               map("n", "<leader>lR", "<cmd>GoRun<Cr>", "Go Run")
-              map("n", "<leader>dT", "<cmd>lua require('dap-go').debug_test()<cr>", "Go Debug Test")
+              map("n", "<leader>dT", "<cmd>lua require('neotest').run.run({ suite = false, strategy = 'dap' })<cr>", "Debug nearest test")
               
               if not client.server_capabilities.semanticTokensProvider then
                 local semantic = client.config.capabilities.textDocument.semanticTokens
